@@ -13,7 +13,7 @@ public class GroupAnagrams {
 
     }
 
-    public static List<List<String>> groupV3(String[] strs){
+    public static List<List<String>> groupV3(String[] strs) {
 
         HashMap<List<Integer>, List<String>> map = new HashMap<>();
 
@@ -21,7 +21,7 @@ public class GroupAnagrams {
             Integer[] counts = new Integer[26];
             Arrays.fill(counts, 0);
             for (Character character : string.toCharArray()) {
-                counts[character-'a'] += 1;
+                counts[character - 'a'] += 1;
             }
             map.putIfAbsent(Arrays.asList(counts), new ArrayList<>());
             map.get(Arrays.asList(counts)).add(string);
