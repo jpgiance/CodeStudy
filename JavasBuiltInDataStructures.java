@@ -169,6 +169,7 @@ public class JavasBuiltInDataStructures {
         fruitInventory.put("apples", 5);
         fruitInventory.put("strawberries", 7);
         fruitInventory.put("oranges", 4);
+        fruitInventory.putIfAbsent("mango", 1);
         
         // Remove a key-value pair from HashMap:
         fruitInventory.remove("apples");
