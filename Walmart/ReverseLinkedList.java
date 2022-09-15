@@ -24,7 +24,7 @@ public class ReverseLinkedList {
         ListNode head1 = new ListNode(1, new ListNode(2, new ListNode(4, null)));
         ListNode head2 = new ListNode(1, new ListNode(3, new ListNode(4, null)));
 
-        ListNode solution = answer(head1);
+        ListNode solution = answer1(head1);
         while (solution != null) {
             System.out.print(solution.val + " -> ");
             solution = solution.next;
@@ -48,6 +48,27 @@ public class ReverseLinkedList {
         }
 
         return minusOneNode;
+    }
+
+
+    // This solution is from a JavaScript course, however it doesn't work on Java due to the pointers assigments 
+    private static ListNode answer1(ListNode head) {
+        if(head == null) return null;
+        if(head.next == null) return head;
+        
+
+        ListNode nextNode = null;
+        ListNode previousNode = head;
+
+
+        while (head != null) {
+            nextNode = head.next;
+            head.next = previousNode;
+            previousNode = head;
+            head = nextNode;
+        }
+
+        return previousNode;
     }
     
 }
